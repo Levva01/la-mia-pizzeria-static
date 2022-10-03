@@ -1,8 +1,29 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    List<Pizza> menu = new List<Pizza>
+    {
+        new Pizza("Margherita", "passata di pomodoro, mozzarella di bufala, basilico", "~/img/istockphoto-1168754685-612x612.jpg", 5.00),
+        new Pizza("Margherita", "passata di pomodoro, mozzarella di bufala, basilico", "~/img/istockphoto-1168754685-612x612.jpg", 5.00),
+        new Pizza("Margherita", "passata di pomodoro, mozzarella di bufala, basilico", "~/img/istockphoto-1168754685-612x612.jpg", 5.00),
+        new Pizza("Margherita", "passata di pomodoro, mozzarella di bufala, basilico", "~/img/istockphoto-1168754685-612x612.jpg", 5.00),
+        new Pizza("Margherita", "passata di pomodoro, mozzarella di bufala, basilico", "~/img/istockphoto-1168754685-612x612.jpg", 5.00)
+
+    };
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <ul>
+    <h2>Menu Pizze</h2>
+
+    @foreach(Pizza pizza in menu){
+        <li>
+            <img src="@pizza.Foto">
+            <h4>@pizza.Nome</h4>
+            <p>@pizza.Descrizione</p>
+            <p>@pizza.Prezzo</p>
+        </li>
+    }
+
+    </ul>
+
 </div>
